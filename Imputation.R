@@ -25,7 +25,7 @@ train_imp <- mice(train, method = 'pmm', m = 100, maxit = 10)
 test_imp <- mice(test, method = 'pmm', m = 100, maxit = 10)
 
 train_comp_mean <- complete(train_imp, action = "long")
-test_comp_mean <- complete(train_imp, action = "long")
+test_comp_mean <- complete(test_imp, action = "long")
 
 train_comp_long <- complete(train_imp, action = "long", include = TRUE)
-test_comp_long <- complete(train_imp, action = "long", include = TRUE)
+test_comp_long <- complete(test_imp, action = "long", include = TRUE)
