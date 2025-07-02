@@ -17,7 +17,7 @@ summary(MIMIC3_Cohort_filt)
 vis_miss(MIMIC3_Cohort_filt %>% slice_sample(n=1000)) + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 
-part_index <- createDataPartition(MIMIC3_Cohort_filt$VC, p = 0.75)
+part_index <- createDataPartition(MIMIC3_Cohort_filt$VC, p = 0.75, list = FALSE)
 train <- MIMIC3_Cohort_filt[part_index, ]
 test <- MIMIC3_Cohort_filt[-part_index, ]
 
